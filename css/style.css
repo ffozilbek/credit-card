@@ -9,6 +9,8 @@ html {
 *::after,
 *::before {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -17,10 +19,10 @@ body {
     padding: 0;
     margin: 0;
     font-size: 16px;
-    line-height: 1.5;
-    font-family: "Roboto","Arial",sans-serif;
+    line-height: normal;
+    font-family: "Inter", sans-serif;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #f2f2f2;
     color: #222;
 }
 
@@ -31,10 +33,121 @@ img {
 
 /* CONTAINER */
 .container {
-    max-width: 1200px;
+    max-width: 561px;
     width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.credit-card {
+    width: 561px;
+    height: 355px;
+    color:#fff;
+    position: relative;
+    perspective: 1000px;
+}
+.credit-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+.credit-card:hover .card-back {
+    transform: rotateY(360deg);
+}
+.card-front,.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("../img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    padding-left: 33px;
+    padding-right: 44px;
+    transition: transform 0.5s ease;
+    box-shadow: 0px 2px 4px rgba(34, 34, 34,0.5);
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-header {
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 95px;
+}
+.subtrack {
+    width: 28px;
+    height: 36px;
+}
+.card-logo {
+    width: 76px;
+    height: 23px;
+}
+.card-number {
+    width: 442px;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.card-info-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+.card-list-item {
+    display: flex;
+    flex-direction: column;
+}
+.card-holder-name,.expiry-date {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-name,.expiry-date-value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.check-terminal {
+    width: 100%;
+    height: 60px;
+    background-color:#222;
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+.secure-code-section {
+    width: 100%;
+    height: 40px;
+    background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+
+.call-centre {
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.text-eng,.text-uz {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.text-eng {
+    margin-bottom: 10px;
 }
